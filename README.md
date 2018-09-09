@@ -1,13 +1,22 @@
 ``` sql
-Создаем таблицу:
+Исправить шрифт:  
+psql \! chcp 1251 
+
+Создать таблицу:
 create table blog (
-	id SERIAL PRIMARY KEY,
-	header VARCHAR(100),
-	description VARCHAR(255),
-	fullText TEXT,
-	day DATE
+	id serial primary key,
+	header varchar(100),
+	description varchar(255),
+	fullText text,
+	day date
 );
 
-Вставляем пост:
+Получить список всех таблиц:
+\dt   
+
+Вставить пост:
 insert into blog (header, description, fullText, day) values ('your-header', 'your-description', 'your-text', now());
+
+Получить все значения:  
+select * from blog;
 ```
