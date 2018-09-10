@@ -1,0 +1,50 @@
+
+<button class="addPost">add</button>
+<div class="formAdd hidden">
+	<form method="post" action="/add">
+			<label>header</label>
+		<input type="text" name="header">
+			<label>description</label>
+		<input type="text" name="description">
+			<label>fulltext</label>
+		<input type="text" name="fulltext">
+		<label>day</label>
+	<input type="text" name="day">
+		<input type="submit" value="save new">
+	</form>
+</div>
+
+<form method="post" action="/edit" class="formEdit hidden">
+	<input type="text" name="id" id='edit-form-id' class="hidden">
+		<label>header</label>
+	<input type="text" name="header" id='edit-form-header'>
+		<label>description</label>
+	<input type="text" name="description" id='edit-form-description'>
+		<label>fulltext</label>
+	<input type="text" name="fulltext" id='edit-form-fulltext'>
+		<label>day</label>
+	<input type="text" name="day" id='edit-form-day'>
+	<input type="submit" value="save edit">
+</form>
+
+
+<div class="container">
+{{#each temp }}
+	<div class="post">
+		<p>id: {{ this.id }}</p>
+		<p>header: {{ this.header }}</p>
+		<p>description: {{ this.description }}</p>
+		<p>fulltext: {{ this.fulltext }}</p>
+		<p>day: {{ this.day }}</p>
+		<button class="edit" 
+				data-id="{{ this.id }}"
+				data-header="{{ this.header }}"
+				data-description="{{ this.description }}"
+				data-fulltext="{{ this.fulltext }}" 
+				data-day="{{ this.day }}">edit</button>
+		<button class="delete" 
+				data-id="{{ this.id }}">del</button>
+	</div>
+
+{{/each}}
+	</div>

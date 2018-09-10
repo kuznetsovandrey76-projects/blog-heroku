@@ -1,0 +1,17 @@
+{
+  "name": "node-plus-postgresql",
+  "version": "1.0.0",
+  "description": "local version Node plus Postrgesql using pgAdmin3",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Andrey Kuznetsov",
+  "license": "ISC",
+  "dependencies": {
+  	"body-parser": "*",
+    "express": "*",
+    "express-handlebars": "*",
+    "pg": "*"
+  }
+}
